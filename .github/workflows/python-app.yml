@@ -4,7 +4,7 @@ name: Python_Cl
 
 on:
   push:
-    branches: [ "main",  "JosueTorresN-patch-1" ]
+    branches: [ "main", "JosueTorresN-patch-1" ]
   pull_request:
     branches: [ "main" ]
 
@@ -13,7 +13,6 @@ permissions:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -30,7 +29,10 @@ jobs:
         source ./venv/bin/activate
         python -m pip install --upgrade pip
         pip install pytest
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+    - name: List files in the repository
+      run: |
+        ls -R
 
     - name: Test with pytest
       run: |
