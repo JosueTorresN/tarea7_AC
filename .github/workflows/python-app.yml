@@ -15,7 +15,7 @@ permissions:
 jobs:
   build:
 
-    runs-on: window-latest
+    runs-on: ubunto-latest
 
     steps:
 
